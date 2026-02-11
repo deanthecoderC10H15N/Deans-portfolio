@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All About Dean</title>
+    <title>Dean's Hobbies - Photography</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        /* This handles the "tippy top" recurring image */
         body {
             background-image: url("Screenshot 2026-01-07 at 1.26.07 PM.png");
             background-repeat: repeat-x; 
@@ -20,18 +20,16 @@
             text-align: center;
         }
 
-        /* The bar that goes across the screen */
         .navbar {
             background-color: rgba(0, 0, 0, 0.4);
-            display: flex;            /* Keeps buttons in a row */
-            justify-content: center;  /* Centers them */
+            display: flex;
+            justify-content: center;
             align-items: center;
             padding: 20px 0;
             width: 100%;
             margin-bottom: 20px;
         }
 
-        /* Your Button-64 Formatting */
         .button-64 {
             align-items: center;
             background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
@@ -44,8 +42,129 @@
             padding: 3px;
             cursor: pointer;
             margin: 0 10px;
+            text-decoration: none;
             transition: all 0.3s;
         }
 
         .button-64 span {
-            background-color: rgb(5,
+            background-color: rgb(5, 6, 45);
+            padding: 12px 24px;
+            border-radius: 6px;
+            width: 100%;
+            height: 100%;
+            color: white;
+            display: block;
+            transition: 300ms;
+        }
+
+        .button-64:hover span {
+            background: none;
+        }
+
+        /* Photography Section */
+        .photo-intro {
+            background: rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            border-radius: 15px;
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-size: 0.9em;
+            font-style: italic;
+            color: #add8e6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="animate__animated animate__fadeInDown">Dean's Hobbies </h1>
+
+    <nav class="navbar">
+        <a class="button-64" href="index.html"><span>Home</span></a>
+        <a class="button-64" href="FunFacts.html"><span>Fun Facts</span></a>
+        <a class="button-64" href="Hobbies.html"><span>Hobbies</span></a>
+    </nav>
+
+    <section class="photo-intro animate__animated animate__fadeIn">
+        <h2>Photography</h2>
+        <p>I use to capture the world through a Nikon D3110 with a fancy <strong>18-300 mm lens</strong>. I can go from every place with an ultrawide to supertelephoto lens to capture everything without switching gear.</p>
+    </section>
+
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="1DA2D565-22FE-4F40-AEC2-6BCF6953D16A_1_105_c.jpeg" alt="Shot 1">
+            <div class="caption">Blue Jay zoomed in</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="2DFC047C-C8B2-4BDC-8317-DDCF48C0D352_1_105_c.jpeg" alt="Shot 2">
+            <div class="caption">The 300mm zoom for birds eating</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="5AF6FC62-928E-42C5-8002-EAC9D775090D_1_105_c.jpeg" alt="Shot 3">
+            <div class="caption">Sharp details on the glass</div>
+        </div>
+
+        <div class="gallery-item"><img src="5F023A31-CB31-41C2-8224-866D0264523C_1_105_c.jpeg" alt="Shot 4"><div class="caption">Frozen in time droplets</div></div>
+        <div class="gallery-item"><img src="6F97DDBE-454A-425E-A21C-FC523F309D0B_1_105_c.jpeg" alt="Shot 5"><div class="caption"> Caged Nature</div></div>
+        <div class="gallery-item"><img src="8BA7311E-A7EF-496E-AE58-A41AEA6EBD4B_1_105_c.jpeg" alt="Shot 6"><div class="caption">The sprint to warmth</div></div>
+        <div class="gallery-item"><img src="8DDE6D8B-1E14-4C66-AEE3-659C318FB2D9_1_105_c.jpeg" alt="Shot 7"><div class="caption">Sun's Good Morning</div></div>
+        <div class="gallery-item"><img src="9F4DB6D0-9411-48F4-B7AF-CEDEC80F82EE_1_105_c.jpeg" alt="Shot 8"><div class="caption">XO Tatted All over her body</div></div>
+        <div class="gallery-item"><img src="28AEF776-9F60-4F85-BC9E-872B976D70B8_1_105_c.jpeg" alt="Shot 9"><div class="caption">Cars lined up to race</div></div>
+        <div class="gallery-item"><img src="52E96940-6958-4D06-80EC-D2635FEBFDCC_1_105_c.jpeg" alt="Shot 10"><div class="caption">Beautiful Bokeh</div></div>
+        <div class="gallery-item"><img src="83DC5EFE-9C31-4B53-8A59-467C3EC0EFA8_1_105_c.jpeg" alt="Shot 11"><div class="caption">Tree Contrast</div></div>
+        <div class="gallery-item"><img src="93F2D6E1-68C5-4EA8-955A-2E90D709CC37_1_105_c.jpeg" alt="Shot 12"><div class="caption">Winters Exhale</div></div>
+        <div class="gallery-item"><img src="97BD7179-5E89-4CAD-9C66-9C0E6FC5679A_1_105_c.jpeg" alt="Shot 13"><div class="caption">Curtain to new life</div></div>
+        <div class="gallery-item"><img src="160E2A40-8F81-4D1D-95FF-2DF21CE60A9E_1_105_c.jpeg" alt="Shot 14"><div class="caption">Evening Shot</div></div>
+        <div class="gallery-item"><img src="4650B395-5F5F-4511-AD2C-4EF404C89102_1_105_c.jpeg" alt="Shot 15"><div class="caption">Wide Angle</div></div>
+        <div class="gallery-item"><img src="6433F9A9-28D7-4C38-B785-14817E1C1953_1_105_c.jpeg" alt="Shot 16"><div class="caption">Focal Point</div></div>
+        <div class="gallery-item"><img src="35267D68-4A4C-4692-A693-D8BF88B7A9C2_1_105_c.jpeg" alt="Shot 17"><div class="caption">Candid Moment</div></div>
+        <div class="gallery-item"><img src="952880E8-96BA-4D74-BEE7-3566452F30D8_1_105_c.jpeg" alt="Shot 18"><div class="caption">Action Shot</div></div>
+        <div class="gallery-item"><img src="A8F34922-AE88-40C7-9F62-05BDD58F5DD6_1_105_c.jpeg" alt="Shot 19"><div class="caption">Framing</div></div>
+        <div class="gallery-item"><img src="B3F96C10-C249-4C7E-8E31-459DD61202CD_1_105_c.jpeg" alt="Shot 20"><div class="caption">Dean's Vision</div></div>
+        <div class="gallery-item"><img src="B04AB18A-C3B7-413D-9E66-45390897E741_1_105_c.jpeg" alt="Shot 21"><div class="caption">Architecture</div></div>
+        <div class="gallery-item"><img src="BB7F97FE-D788-42CE-861B-8D7A3B050716_1_105_c.jpeg" alt="Shot 22"><div class="caption">Macro Detail</div></div>
+        <div class="gallery-item"><img src="BF9DODF3-DB18-4CB6-BC63-929CB7C50D7A_1_105_c.jpeg" alt="Shot 23"><div class="caption">Sunset Colors</div></div>
+        <div class="gallery-item"><img src="C450CAD8-B626-493C-8FAA-03E6565D9B8D_1_105_c.jpeg" alt="Shot 24"><div class="caption">Contrast</div></div>
+        <div class="gallery-item"><img src="C779D231-CEA2-431A-A5BB-FDD9453DE561_1_105_c.jpeg" alt="Shot 25"><div class="caption">Vibrancy</div></div>
+        <div class="gallery-item"><img src="D36BE595-AE6E-4632-83C9-E375C749130D_1_105_c.jpeg" alt="Shot 26"><div class="caption">Sharp Focus</div></div>
+        <div class="gallery-item"><img src="DED7B9CA-FOCC-4962-8AA6-644DA0FAED77_1_105_c.jpeg" alt="Shot 27"><div class="caption">Perspective</div></div>
+        <div class="gallery-item"><img src="DF1D11A5-ED58-453E-A5D6-528A9E8E0611_1_105_c.jpeg" alt="Shot 28"><div class="caption">Reflection</div></div>
+        <div class="gallery-item"><img src="EOC3A920-5033-4625-BOB2-27A57D5631B5_1_105_c.jpeg" alt="Shot 29"><div class="caption">Portraiture</div></div>
+        <div class="gallery-item"><img src="E2B26183-3E16-4F01-BD42-E9A867072315.jpeg" alt="Shot 30"><div class="caption">The Final Shot</div></div>
+    </div>
+
+</body>
+</html>
