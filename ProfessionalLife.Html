@@ -77,31 +77,7 @@
         .stat-item { font-size: 1.1em; }
         .stat-item strong { color: #AF40FF; }
 
-        /* --- Carousel --- */
-        .carousel-container {
-            max-width: 800px;
-            position: relative;
-            margin: 50px auto;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 3px solid #2a2a2a;
-        }
-
-        .carousel-slide { display: none; }
-        .carousel-slide img { width: 100%; height: 500px; object-fit: cover; }
-        .carousel-caption {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(5, 6, 45, 0.9);
-            color: #00DDEB;
-            padding: 10px 30px;
-            border-radius: 30px;
-            border: 1px solid #AF40FF;
-        }
-
-        /* --- Click Pulse --- */
+     
         .click-pulse {
             position: fixed;
             width: 20px;
@@ -136,27 +112,16 @@
     </nav>
 
     <div class="bio-card animate__animated animate__fadeInUp animate__delay-1s">
-        <h2>Stats</h2>
+        <h2>Professionally Unemployed</h2>
         <div class="bio-grid">
-            <div class="stat-item"><strong>Age:</strong> 14</div>
-            <div class="stat-item"><strong>Gender:</strong> Alpha Male</div>
-            <div class="stat-item"><strong>Height:</strong> 5'10"</div>
-            <div class="stat-item"><strong>Weight:</strong> 150 lbs</div>
-            <div class="stat-item"><strong>Favorite Drink:</strong> Sprite & Lemonade</div>
-            <div class="stat-item"><strong>Colors:</strong> Matte Black & Dark Purple</div>
-        </div>
-        <p style="margin-top: 20px;"><strong>Travel in 2025:</strong> Dominican Republic, Florida, Punta Cana, Greece, and Chicago</p>
+            <div class="stat-item"><strong>Drean Job:</strong> Healthcare at Hospital or Dentistry</div>
+            <div class="stat-item"><strong>Years Employed:</strong> 0</div>
+            <div class="stat-item"><strong>Work Ethic:</strong> 100% (when I have work)</div>
+        </div>  
     </div>
 
     <div class="carousel-container">
-        <div class="carousel-slide fade"><img src=".vscode/Dean Raptis/_DSC1233.jpeg" alt="Travel 1"><div class="carousel-caption">Tech Class</div></div>
-        <div class="carousel-slide fade"><img src=".vscode/Dean Raptis/IMG_0408.jpeg" alt="Travel 2"><div class="carousel-caption">Graduation</div></div>
-        <div class="carousel-slide fade"><img src=".vscode/Dean Raptis/IMG_2161.jpeg" alt="Travel 3"><div class="carousel-caption">Just a photo</div></div>
-        <div class="carousel-slide fade"><img src=".vscode/Dean Raptis/IMG_3214.jpeg" alt="Travel 4"><div class="carousel-caption">Biking</div></div>
-        <div class="carousel-slide fade"><img src=".vscode/Dean Raptis/IMG_3588.jpeg" alt="Travel 5"><div class="carousel-caption">Driving Lesson</div></div>
-        <div class="carousel-slide fade"><img src=".vscode/Dean Raptis/IMG_9057.jpeg" alt="Travel 6"><div class="carousel-caption">Mafia Boss that got cropped</div></div>
-        <div class="carousel-slide fade"><img src=".vscode/Dean Raptis/IMG_9327.jpeg" alt="Travel 7"><div class="carousel-caption">Chiago</div></div>
-        <link rel="stylesheet" href=".vscode/Dean Raptis/style.css">
+        <div class="carousel-slide fade"><img src="Screenshot 2026-02-19 at 10.11.05 AM.png" alt="Professional Life"></div>
     </div>
 
     <script>
@@ -182,18 +147,6 @@
             document.body.appendChild(pulse);
             setTimeout(() => { pulse.remove(); }, 600);
         });
-
-        // Carousel Logic
-        let slideIndex = 0;
-        showSlides();
-        function showSlides() {
-            let slides = document.getElementsByClassName("carousel-slide");
-            for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000);
-        }
 
         // Magnetic Nav
         const buttons = document.querySelectorAll('.nav-btn');
