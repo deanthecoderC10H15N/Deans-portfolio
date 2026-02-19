@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites & Music</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        /* This CSS ensures the "tippy top" image and bar are consistent */
         body {
             background-image: url("Screenshot 2026-01-07 at 1.26.07 PM.png");
             background-repeat: repeat-x; 
@@ -11,7 +13,7 @@
             background-size: auto 80px;
             background-color: rgb(10, 74, 102);
             margin: 0; 
-            padding-top: 100px; 
+            padding-top: 120px; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: white;
             text-align: center;
@@ -40,72 +42,111 @@
             cursor: pointer;
             text-decoration: none;
             margin: 0 10px;
+            transition: transform 0.2s;
         }
 
         .button-64 span {
             background-color: rgb(5, 6, 45);
-            padding: 16px 24px;
+            padding: 12px 24px;
             border-radius: 6px;
             width: 100%;
             height: 100%;
             color: white;
             display: block;
-            transition: 300ms;
         }
 
-        .button-64:hover span {
-            background: none;
+        .button-64:hover {
+            transform: scale(1.05);
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .movie-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .movie-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #00DDEB;
         }
     </style>
 </head>
 <body>
 
-    <h1>Favorites & Music</h1>
+    <h1 class="animate__animated animate__fadeInDown">Favorites & Music</h1>
 
     <nav class="navbar">
-        <button class="button-64" onclick="location.href='index.html'">
-            <span>Home</span>
-        </button>
-        <button class="button-64" onclick="location.href='FunFacts.html'">
-            <span>Fun Facts</span>
-        </button>
-        <button class="button-64" onclick="location.href='Hobbies.html'">
-            <span>Hobbies</span>
-        </button>
+        <a class="button-64" href="index.html"><span>Home</span></a>
+        <a class="button-64" href="FunFacts.html"><span>Fun Facts</span></a>
+        <a class="button-64" href="Hobbies.html"><span>Hobbies</span></a>
     </nav>
 
-    <h2>Movies & Shows</h2>
-    <ul style="list-style-position: inside; display: inline-block; text-align: left;">
-      
-<style>
-.content-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1200px;
-    margin: -50px auto 50px;
-    padding: 0 20px;
-}
-</style>
+    <h2 class="animate__animated animate__fadeIn">Movies & Shows</h2>
 
+    <div class="movie-grid animate__animated animate__fadeInUp">
+        
+        <div class="movie-card">
+            <img src="F&F.jpg" alt="Fast and Furious">
+            <div class="movie-title">Fast & Furious</div>
+        </div>
 
-        <li>Fast & Furious</li> 
-<div class="gallery-item"><img src="F&F.jpg" alt="Shot 26"><div class="caption"> Fast & Furious</div></div>
+        <div class="movie-card">
+            <img src="the-good-doctor.jpg" alt="The Good Doctor">
+            <div class="movie-title">The Good Doctor</div>
+        </div>
 
+        <div class="movie-card">
+            <img src="zootopia-2.jpg" alt="Zootopia">
+            <div class="movie-title">Zootopia 1 & 2</div>
+        </div>
 
+        <div class="movie-card">
+            <img src="squid-game-background-dg2felnhhngxbt6d.jpg" alt="Squid Game">
+            <div class="movie-title">Squid Games</div>
+        </div>
 
-        <li>The Good Doctor</li>
-        <li>Zootopia 1 & 2</li>
-        <li>Squid GameS</li>
-        <li>The Rookie</li>
-        <li>Manifest</li>
-    </ul>
+        <div class="movie-card">
+            <img src="Manifest.webp" alt="Manifest">
+            <div class="movie-title">Manifest</div>
+        </div>
 
-    <hr style="width: 50%; margin: 20px auto; border: 0.5px solid rgba(255,255,255,0.2);">
+        <div class="movie-card">
+            <img src="Season7poster.webp" alt="The Rookie">
+            <div class="movie-title">The Rookie</div>
+        </div>
+
+    </div>
+
+    <hr style="width: 50%; margin: 40px auto; border: 0.5px solid rgba(255,255,255,0.2);">
 
     <h2>Music</h2>
-    <p>Favorite artist: The Weeknd</p>
-    <img src="Screenshot 2026-01-07 at 1.26.07 PM.png" alt="Dean" width="300" height="200" style="border-radius: 10px;">
+    <p>Favorite artist: <strong>The Weeknd</strong></p>
+    <img src="Screenshot 2026-01-07 at 1.26.07 PM.png" alt="Dean" width="300" height="200" style="border-radius: 10px; margin-bottom: 50px;">
 
 </body>
 </html>

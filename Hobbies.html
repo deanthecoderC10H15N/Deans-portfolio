@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dean's Hobbies - Photography</title>
+    <title>Dean's Hobbies - Photography & Climbing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         body {
-            /* Kept your face banner */
             background-image: url("Screenshot 2026-01-07 at 1.26.07 PM.png");
             background-repeat: repeat-x; 
             background-position: top;
             background-size: auto 80px;
             background-color: rgb(10, 74, 102);
             margin: 0; 
-            /* INCREASED PADDING HERE: Changed from 100px to 160px to fix overlap */
             padding-top: 160px; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: white;
@@ -31,7 +29,6 @@
             margin-bottom: 20px;
         }
 
-        /* Your Cool Gradient Buttons */
         .button-64 {
             align-items: center;
             background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
@@ -59,20 +56,17 @@
             transition: 300ms;
         }
 
-        .button-64:hover span {
-            background: none;
-        }
+        .button-64:hover span { background: none; }
 
-        /* Photography Section */
-        .photo-intro {
+        .section-box {
             background: rgba(0, 0, 0, 0.3);
             margin: 20px auto;
-            padding: 20px;
-            max-width: 800px;
+            padding: 30px;
+            max-width: 1000px;
             border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Gallery Grid */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -89,13 +83,11 @@
             transition: transform 0.3s;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
+        .gallery-item:hover { transform: scale(1.05); }
 
         .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
             border-radius: 5px;
         }
@@ -105,6 +97,15 @@
             font-size: 0.9em;
             font-style: italic;
             color: #add8e6;
+        }
+
+        .incident-report {
+            background: rgba(255, 64, 129, 0.2);
+            border-left: 5px solid #ff4081;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 10px 10px 0;
+            text-align: left;
         }
     </style>
 </head>
@@ -118,29 +119,38 @@
         <a class="button-64" href="Hobbies.html"><span>Hobbies</span></a>
     </nav>
 
-    <section class="photo-intro animate__animated animate__fadeIn">
+    <section class="section-box animate__animated animate__fadeIn">
+        <h2>Rock Climbing</h2>
+        <p>I’ve been climbing for 3 years now. It’s as much mental as it is physical, if the mind is not focused your body won't be.</p>
+        <div class="incident-report">
+            <strong>Biggest Fall!:</strong> I once took a 20-foot fall and hit the ground while clipping and have skipped clips many times putting me at risk of hitting the ground from the top yet im still alive :)
+        </div>
+    </section>
+
+    <div class="gallery animate__animated animate__fadeInUp">
+        <div class="gallery-item"><img src="FILES/clim 1.jpg" alt="Climb 1"><div class="caption">Slopers on Slab</div></div>
+        <div class="gallery-item"><img src="FILES/clim3.jpg" alt="Climb 2"><div class="caption">High Intensity Boudler</div></div>
+        <div class="gallery-item"><img src="FILES/climb4.jpg" alt="Climb 3"><div class="caption">Tiring Overhang</div></div>
+        <div class="gallery-item"><img src="FILES/climb5.jpg" alt="Climb 4"><div class="caption">Falling</div></div>
+        <div class="gallery-item"><img src="FILES/climb6.jpg" alt="Climb 5"><div class="caption">Lead on Slab</div></div>
+        <div class="gallery-item"><img src="FILES/climb7.jpeg" alt="Climb 6"><div class="caption">Getting Ready</div></div>
+        <div class="gallery-item"><img src="FILES/climg 2.jpg" alt="Climb 7"><div class="caption">Approaching Victory</div></div>
+    </div>
+
+    <hr style="width: 80%; border: 0.5px solid rgba(255,255,255,0.1); margin: 40px auto;">
+
+    <section class="section-box">
         <h2>Photography</h2>
-        <p>I use to capture the world through a Nikon D3110 with a fancy <strong>18-300 mm lens</strong>. I can go from every place with an ultrawide to supertelephoto lens to capture everything without switching gear.</p>
+        <p>I capture the world through a Nikon D3110 with a fancy <strong>18-300 mm lens (AF-S DX NIKKOR 18-300mm f/3.5-5.6G ED VR
+        )</strong>.</p>
     </section>
 
     <div class="gallery">
-        <div class="gallery-item">
-            <img src="1DA2D565-22FE-4F40-AEC2-6BCF6953D16A_1_105_c.jpeg" alt="Shot 1">
-            <div class="caption">Blue Jay zoomed in</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="2DFC047C-C8B2-4BDC-8317-DDCF48C0D352_1_105_c.jpeg" alt="Shot 2">
-            <div class="caption">The 300mm zoom for birds eating</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="5AF6FC62-928E-42C5-8002-EAC9D775090D_1_105_c.jpeg" alt="Shot 3">
-            <div class="caption">Sharp details on the glass</div>
-        </div>
-
+        <div class="gallery-item"><img src="1DA2D565-22FE-4F40-AEC2-6BCF6953D16A_1_105_c.jpeg" alt="Shot 1"><div class="caption">Blue Jay zoomed in</div></div>
+        <div class="gallery-item"><img src="2DFC047C-C8B2-4BDC-8317-DDCF48C0D352_1_105_c.jpeg" alt="Shot 2"><div class="caption">The 300mm zoom for birds eating</div></div>
+        <div class="gallery-item"><img src="5AF6FC62-928E-42C5-8002-EAC9D775090D_1_105_c.jpeg" alt="Shot 3"><div class="caption">Sharp details on the glass</div></div>
         <div class="gallery-item"><img src="5F023A31-CB31-41C2-8224-866D0264523C_1_105_c.jpeg" alt="Shot 4"><div class="caption">Frozen in time droplets</div></div>
-        <div class="gallery-item"><img src="6F97DDBE-454A-425E-A21C-FC523F309D0B_1_105_c.jpeg" alt="Shot 5"><div class="caption"> Caged Nature</div></div>
+        <div class="gallery-item"><img src="6F97DDBE-454A-425E-A21C-FC523F309D0B_1_105_c.jpeg" alt="Shot 5"><div class="caption">Caged Nature</div></div>
         <div class="gallery-item"><img src="8BA7311E-A7EF-496E-AE58-A41AEA6EBD4B_1_105_c.jpeg" alt="Shot 6"><div class="caption">The sprint to warmth</div></div>
         <div class="gallery-item"><img src="8DDE6D8B-1E14-4C66-AEE3-659C318FB2D9_1_105_c.jpeg" alt="Shot 7"><div class="caption">Sun's Good Morning</div></div>
         <div class="gallery-item"><img src="9F4DB6D0-9411-48F4-B7AF-CEDEC80F82EE_1_105_c.jpeg" alt="Shot 8"><div class="caption">XO Tatted All over her body</div></div>
@@ -158,215 +168,35 @@
         <div class="gallery-item"><img src="B3F96C10-C249-4C7E-8E31-459DD61202CD_1_105_c.jpeg" alt="Shot 20"><div class="caption">Sunset</div></div>
         <div class="gallery-item"><img src="B04AB18A-C3B7-413D-9E66-45390897E741_1_105_c.jpeg" alt="Shot 21"><div class="caption">Architecture</div></div>
         <div class="gallery-item"><img src="BB7F97FE-D788-42CE-861B-8D7A3B050716_1_105_c.jpeg" alt="Shot 22"><div class="caption">Bird Detail</div></div>
-        <div class="gallery-item"><img src="BF9DODF3-DB18-4CB6-BC63-929CB7C50D7A_1_105_c.jpeg" alt="Shot 23"><div class="caption">Sunset Colors</div></div>
+        <div class="gallery-item"><img src="BF9D0DF3-DB18-4CB6-BC63-929CB7C50D7A_1_105_c.jpeg" alt="Shot 23"><div class="caption">Eye close up</div></div>
         <div class="gallery-item"><img src="C450CAD8-B626-493C-8FAA-03E6565D9B8D_1_105_c.jpeg" alt="Shot 24"><div class="caption">Tree Sharpness</div></div>
         <div class="gallery-item"><img src="C779D231-CEA2-431A-A5BB-FDD9453DE561_1_105_c.jpeg" alt="Shot 25"><div class="caption">Vibrant Motion</div></div>
         <div class="gallery-item"><img src="D36BE595-AE6E-4632-83C9-E375C749130D_1_105_c.jpeg" alt="Shot 26"><div class="caption">Spider Droplets</div></div>
-        <div class="gallery-item"><img src="DED7B9CA-FOCC-4962-8AA6-644DA0FAED77_1_105_c.jpeg" alt="Shot 27"><div class="caption">Perspective</div></div>
-        <div class="gallery-item"><img src="DF1D11A5-ED58-453E-A5D6-528A9E8E0611_1_105_c.jpeg" alt="Shot 28"><div class="caption">Reflection</div></div>
-        <div class="gallery-item"><img src="EOC3A920-5033-4625-BOB2-27A57D5631B5_1_105_c.jpeg" alt="Shot 29"><div class="caption">Portraiture</div></div>
+        <div class="gallery-item"><img src="DED7B9CA-F0CC-4962-8AA6-644DA0FAED77_1_105_c.jpeg" alt="Shot 27"><div class="caption">Perspective</div></div>
         <div class="gallery-item"><img src="E2B26183-3E16-4F01-BD42-E9A867072315.jpeg" alt="Shot 30"><div class="caption">Red Night Smile</div></div>
-    </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Climbing & Music | Dean</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <style>
-        body {
-            background-color: rgb(10, 74, 102);
-            margin: 0; 
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: white;
-            text-align: center;
-        }
-
-        /* Hero Section */
-        .climb-music-hero {
-            background: linear-gradient(rgba(10, 74, 102, 0.8), rgba(10, 74, 102, 0.8)), 
-                        url('D93F3D6B-A853-4954-8C11-F1C2817CBB10.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 100px 20px;
-            border-bottom: 5px solid #AF40FF;
-        }
-
-        /* Layout Grid */
-        .content-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            max-width: 1200px;
-            margin: -50px auto 50px;
-            padding: 0 20px;
-        }
-
-        /* Glassmorphism Cards */
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: left;
-        }
-
-        /* Rock Climbing Photo Grid */
-        .climbing-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .climbing-grid img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid rgba(255,255,255,0.1);
-        }
-
-        /* The "Fall" Warning Box */
-        .incident-report {
-            background: rgba(255, 64, 129, 0.2);
-            border-left: 5px solid #ff4081;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 0.9em;
-        }
-
-        /* Music List Styling */
-        .playlist-container {
-            max-height: 500px;
-            overflow-y: auto;
-            background: rgba(0,0,0,0.3);
-            border-radius: 10px;
-            padding: 10px;
-        }
-        .track {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.85em;
-        }
-        .track-num { width: 30px; color: #AF40FF; font-weight: bold; }
-        .track-info { flex-grow: 1; }
-        .track-title { display: block; font-weight: bold; }
-        .track-artist { font-size: 0.8em; color: #ccc; }
-
-        /* Navbar (Recurring from your main style) */
-        .navbar {
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .nav-btn {
-            background: #f0f0f0;
-            border: none;
-            padding: 8px 20px;
-            margin: 0 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-    </style>
-</head>
-<body>
-
-    <header class="climb-music-hero">
-        <h1 class="animate__animated animate__zoomIn">Climbing & Music </h1>
-        <p>The Two that go hand in hand, dare I say hand in hold.</p>
-    </header>
-
-    <div class="content-container">
-        
-        <div class="card animate__animated animate__fadeInLeft">
-            <h2>The Wall</h2>
-            <p>I’ve been climbing for 3 years now in many gyms with routines and delvoped a wide range of ability and refnied myself. Climbing is as much mental as it is physical.</p>
-            
-            <div class="incident-report">
-                <strong>Biggest Fall!:</strong>
-                "I once took a 20-foot fall and hit the ground while clipping I forgot gravity is always on."
-            </div>
-
-            <div class="climbing-grid">
-                <img src="4BA9A096-5912-4669-8410-179DE7BE37F3.jpg" alt="Climbing">
-                <img src="9BBDC136-AE5F-4815-A3CE-A595AA3B1B76.jpg" alt="Climbing">
-                <img src="980D63FE-38C5-4B67-92DD-65BF7378A766.jpg" alt="Climbing">
-                <img src="IMG_3083.jpeg" alt="Climbing">
-            </div>
-        </div>
-
-        <div class="card animate__animated animate__fadeInRight">
-            <h2>La Musica</h2>
-            <p>AirPods are my saving grace. <strong>The Weeknd</strong> is always likely playing. <em>False Idols</em> is the current peak song.</p>
-            
-            <div class="playlist-container">
-                <div class="track">
-                    <div class="track-num">01</div>
-                    <div class="track-info">
-                        <span class="track-title">House Of Balloons / Glass Table Girls</span>
-                        <span class="track-artist">The Weeknd</span>
-                    </div>
-                </div>
-                <div class="track">
-                    <div class="track-num">02</div>
-                    <div class="track-info">
-                        <span class="track-title">False Idols</span>
-                        <span class="track-artist">The Weeknd</span>
-                    </div>
-                </div>
-                <div class="track">
-                    <div class="track-num">03</div>
-                    <div class="track-info">
-                        <span class="track-title">Take Me Back To LA</span>
-                        <span class="track-artist">The Weeknd</span>
-                    </div>
-                </div>
-                <div class="track">
-                    <div class="track-num">04</div>
-                    <div class="track-info">
-                        <span class="track-title">Around Me</span>
-                        <span class="track-artist">Metro Boomin ft. Don Toliver</span>
-                    </div>
-                </div>
-                <div class="track">
-                    <div class="track-num">05</div>
-                    <div class="track-info">
-                        <span class="track-title">Love Hangover</span>
-                        <span class="track-artist">JENNIE ft. Dominic Fike</span>
-                    </div>
-                </div>
-                <div class="track">
-                    <div class="track-num">06</div>
-                    <div class="track-info">
-                        <span class="track-title">Six Feet Under</span>
-                        <span class="track-artist">The Weeknd</span>
-                    </div>
-                </div>
-                <div class="track">
-                    <div class="track-num">07</div>
-                    <div class="track-info">
-                        <span class="track-title">Ordinary Life</span>
-                        <span class="track-artist">The Weeknd</span>
-                    </div>
-                </div>
-            </div>
-            <p style="font-size: 0.7em; margin-top: 10px; opacity: 0.6;">+ 40 more tracks in the rotation...</p>
-        </div>
-
+        <div class="gallery-item"><img src="PHOTOS MORE/_DSC3196.JPG" alt="Shot 30"><div class="caption">Tree droplets</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/_DSC3208.JPG" alt="Shot 30"><div class="caption">Glowing Traffic</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/4B759917-010C-461A-9398-9A565A23BA57.JPG" alt="Shot 30"><div class="caption">Water Stream</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/5A782C14-4861-4220-8B1F-AE67888600F1.JPG" alt="Shot 30"><div class="caption">Cubic Light</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/6A7949D4-5CB9-47BA-84BE-95F0EA794B5D.JPG" alt="Shot 30"><div class="caption">Slick Taillight</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/6B91567F-2044-4240-87A4-0441F529FAB8.JPG" alt="Shot 30"><div class="caption">Ominous Tesla</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/29E082B3-BD4B-4928-8F6E-6D0EE6CB4F10.JPG" alt="Shot 30"><div class="caption">Straight Taillight</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/69D8EBE0-612F-483E-9B53-9A4AA94E074E.JPG" alt="Shot 30"><div class="caption">Slick Taillight Pt.2 </div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/89FC16AD-1FFB-4256-93D1-04B8DE8AC336.JPG" alt="Shot 30"><div class="caption">Golden Sunset</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/93BA6638-1E21-4BB8-B905-4B2F1F10D7B8.JPG" alt="Shot 30"><div class="caption">A squirl's morning</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/28997EC3-B67C-458A-A15C-32975530F902.JPG" alt="Shot 30"><div class="caption">Silver X3</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/2552816B-A8A3-49EC-97CA-BC86FFED80B5.JPG" alt="Shot 30"><div class="caption">White Porsche</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/AF0ED99B-9B16-4BF6-B491-E470AC70CB55.JPG" alt="Shot 30"><div class="caption">Spread Wings</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/C0CBABB5-61B1-4008-A05D-B92FF68CE5AF.JPG" alt="Shot 30"><div class="caption">Spread Wings</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/C3F24282-1FF1-4D02-9F97-75CC8A221852.jpeg" alt="Shot 30"><div class="caption">Sunset Stream</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/C96B6E82-218C-4EBA-9D00-59DB06FB31B0.JPG" alt="Shot 30"><div class="caption">Amazing Avian</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/D64F81D4-AD85-436B-A9E9-E337761EF891.JPG" alt="Shot 30"><div class="caption">River of light</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/DA852811-BC23-462B-AE66-507923DC7140.JPG" alt="Shot 30"><div class="caption">Benz Taillight</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/ED34982A-D3DD-4109-9753-E8B400222DD5.JPG" alt="Shot 30"><div class="caption">Plane Trails</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/F3E1AF43-BD74-43D8-8CD0-8187CD9E89D1.JPG" alt="Shot 30"><div class="caption">Water Sunset</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/F09505A3-EC86-49F0-8FC5-545F2B0580E8.JPG" alt="Shot 30"><div class="caption">Audi Taillight</div></div>
+          <div class="gallery-item"><img src="PHOTOS MORE/FBF5C4DB-CA28-4996-AC5E-5D440FC19236.JPG" alt="Shot 30"><div class="caption">Tesla Taillight</div></div>
+         
     </div>
 
 </body>
