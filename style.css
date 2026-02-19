@@ -1,6 +1,6 @@
 /* Styles for Deans-portfolio */
 
-  body {
+body {
     /* Your recurring "tippy top" image */
     background-image: url("Screenshot 2026-01-07 at 1.26.07 PM.png");
     background-repeat: repeat-x; 
@@ -10,24 +10,24 @@
     background-color: rgb(10, 74, 102);
     margin: 0; 
     padding-top: 100px; 
-    font-family: -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: white;
     text-align: center;
-  }
+}
 
-  /* The Bar Container */
-  .navbar {
-    background-color: rgba(0, 0, 0, 0.4); /* Dark translucent bar */
-    display: flex;            /* Magic for alignment */
-    justify-content: center;  /* Centers buttons */
-    align-items: center;      /* Vertically aligns buttons */
+/* The Bar Container */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px 0;
     width: 100%;
     margin-bottom: 20px;
-  }
+}
 
-  /* Button 64 Core Styles */
-  .button-64 {
+/* Button 64 Core Styles */
+.button-64 {
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
     border: 0;
@@ -41,20 +41,66 @@
     line-height: 1em;
     max-width: 100%;
     min-width: 140px;
-    padding: 3px; /* This creates the gradient "border" effect */
+    padding: 3px;
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s;
-    margin: 0 10px; /* Space between buttons */
-  }
+    margin: 0 10px;
+    
+    /* MAGNETIC ADDITIONS */
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    z-index: 10;
+}
 
-  .button-64 span {
+.button-64 span {
     background-color: rgb(5, 6, 45);
     padding: 16px 24px;
     border-radius: 6px;
     width: 100%;
     height: 100%;
     transition: 300ms;
-    color: white; /* Ensures text is visible */
+    color: white;
     display: block;
-  }
+}
+
+/* CLICK PULSE EFFECT */
+.click-pulse {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 221, 235, 0.6); /* Cyan glow */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    animation: pulse-animation 0.6s ease-out forwards;
+}
+
+@keyframes pulse-animation {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}/* This makes sure carousel images look perfect */
+.carousel-slide img {
+    width: 100%;
+    height: 550px; /* Fixed height keeps the page steady */
+    object-fit: cover; /* Crops the edges instead of stretching the image */
+    object-position: center; /* Keeps the focus on the middle of the photo */
+    display: block;
+}
+
+/* This makes sure your album/movie grid images look perfect */
+.card img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

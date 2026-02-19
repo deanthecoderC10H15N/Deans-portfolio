@@ -13,11 +13,17 @@
             background-size: auto 80px;
             background-color: rgb(10, 74, 102);
             margin: 0; 
-            padding-top: 160px; 
+            padding-top: 120px; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: white;
             text-align: center;
+            overflow-x: hidden;
         }
+
+        /* --- Eye Follow Styles --- */
+        .eyes-container { display: flex; justify-content: center; gap: 20px; margin-bottom: 10px; }
+        .eye { width: 50px; height: 50px; background: white; border-radius: 50%; position: relative; display: flex; align-items: center; justify-content: center; border: 2px solid #000; }
+        .pupil { width: 20px; height: 20px; background: black; border-radius: 50%; position: absolute; }
 
         .navbar {
             background-color: rgba(0, 0, 0, 0.4);
@@ -42,7 +48,8 @@
             cursor: pointer;
             margin: 0 10px;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
         }
 
         .button-64 span {
@@ -53,10 +60,7 @@
             height: 100%;
             color: white;
             display: block;
-            transition: 300ms;
         }
-
-        .button-64:hover span { background: none; }
 
         .section-box {
             background: rgba(0, 0, 0, 0.3);
@@ -87,8 +91,8 @@
 
         .gallery-item img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            height: 300px;
+            object-fit: cover; /* Keeps Nikon shots from stretching */
             border-radius: 5px;
         }
 
@@ -107,9 +111,32 @@
             border-radius: 0 10px 10px 0;
             text-align: left;
         }
+
+        /* --- Click Pulse Styles --- */
+        .click-pulse {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: rgba(175, 64, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            animation: pulse-animation 0.6s ease-out forwards;
+        }
+
+        @keyframes pulse-animation {
+            0% { width: 0; height: 0; opacity: 1; }
+            100% { width: 100px; height: 100px; opacity: 0; }
+        }
     </style>
 </head>
 <body>
+
+    <div class="eyes-container animate__animated animate__fadeIn">
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+    </div>
 
     <h1 class="animate__animated animate__fadeInDown">Dean's Hobbies </h1>
 
@@ -121,15 +148,15 @@
 
     <section class="section-box animate__animated animate__fadeIn">
         <h2>Rock Climbing</h2>
-        <p>I’ve been climbing for 3 years now. It’s as much mental as it is physical, if the mind is not focused your body won't be.</p>
+        <p>I’ve been climbing for 3 years now. It’s as much mental as it is physical; if the mind is not focused, your body won't be.</p>
         <div class="incident-report">
-            <strong>Biggest Fall!:</strong> I once took a 20-foot fall and hit the ground while clipping and have skipped clips many times putting me at risk of hitting the ground from the top yet im still alive :)
+            <strong>Biggest Fall!:</strong> I once took a 20-foot fall and hit the ground while clipping and have skipped clips many times putting me at risk of hitting the ground from the top yet I'm still alive :)
         </div>
     </section>
 
     <div class="gallery animate__animated animate__fadeInUp">
         <div class="gallery-item"><img src="FILES/clim 1.jpg" alt="Climb 1"><div class="caption">Slopers on Slab</div></div>
-        <div class="gallery-item"><img src="FILES/clim3.jpg" alt="Climb 2"><div class="caption">High Intensity Boudler</div></div>
+        <div class="gallery-item"><img src="FILES/clim3.jpg" alt="Climb 2"><div class="caption">High Intensity Boulder</div></div>
         <div class="gallery-item"><img src="FILES/climb4.jpg" alt="Climb 3"><div class="caption">Tiring Overhang</div></div>
         <div class="gallery-item"><img src="FILES/climb5.jpg" alt="Climb 4"><div class="caption">Falling</div></div>
         <div class="gallery-item"><img src="FILES/climb6.jpg" alt="Climb 5"><div class="caption">Lead on Slab</div></div>
@@ -141,8 +168,7 @@
 
     <section class="section-box">
         <h2>Photography</h2>
-        <p>I capture the world through a Nikon D3110 with a fancy <strong>18-300 mm lens (AF-S DX NIKKOR 18-300mm f/3.5-5.6G ED VR
-        )</strong>.</p>
+        <p>I capture the world through a Nikon D3110 with a fancy <strong>18-300 mm lens (AF-S DX NIKKOR 18-300mm f/3.5-5.6G ED VR)</strong>.</p>
     </section>
 
     <div class="gallery">
@@ -173,31 +199,66 @@
         <div class="gallery-item"><img src="C779D231-CEA2-431A-A5BB-FDD9453DE561_1_105_c.jpeg" alt="Shot 25"><div class="caption">Vibrant Motion</div></div>
         <div class="gallery-item"><img src="D36BE595-AE6E-4632-83C9-E375C749130D_1_105_c.jpeg" alt="Shot 26"><div class="caption">Spider Droplets</div></div>
         <div class="gallery-item"><img src="DED7B9CA-F0CC-4962-8AA6-644DA0FAED77_1_105_c.jpeg" alt="Shot 27"><div class="caption">Perspective</div></div>
-        <div class="gallery-item"><img src="E2B26183-3E16-4F01-BD42-E9A867072315.jpeg" alt="Shot 30"><div class="caption">Red Night Smile</div></div>
-        <div class="gallery-item"><img src="PHOTOS MORE/_DSC3196.JPG" alt="Shot 30"><div class="caption">Tree droplets</div></div>
+        <div class="gallery-item"><img src="E2B26183-3E16-4F01-BD42-E9A867072315.jpeg" alt="Shot 28"><div class="caption">Red Night Smile</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/_DSC3196.JPG" alt="Shot 29"><div class="caption">Tree droplets</div></div>
         <div class="gallery-item"><img src="PHOTOS MORE/_DSC3208.JPG" alt="Shot 30"><div class="caption">Glowing Traffic</div></div>
-        <div class="gallery-item"><img src="PHOTOS MORE/4B759917-010C-461A-9398-9A565A23BA57.JPG" alt="Shot 30"><div class="caption">Water Stream</div></div>
-        <div class="gallery-item"><img src="PHOTOS MORE/5A782C14-4861-4220-8B1F-AE67888600F1.JPG" alt="Shot 30"><div class="caption">Cubic Light</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/6A7949D4-5CB9-47BA-84BE-95F0EA794B5D.JPG" alt="Shot 30"><div class="caption">Slick Taillight</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/6B91567F-2044-4240-87A4-0441F529FAB8.JPG" alt="Shot 30"><div class="caption">Ominous Tesla</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/29E082B3-BD4B-4928-8F6E-6D0EE6CB4F10.JPG" alt="Shot 30"><div class="caption">Straight Taillight</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/69D8EBE0-612F-483E-9B53-9A4AA94E074E.JPG" alt="Shot 30"><div class="caption">Slick Taillight Pt.2 </div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/89FC16AD-1FFB-4256-93D1-04B8DE8AC336.JPG" alt="Shot 30"><div class="caption">Golden Sunset</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/93BA6638-1E21-4BB8-B905-4B2F1F10D7B8.JPG" alt="Shot 30"><div class="caption">A squirl's morning</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/28997EC3-B67C-458A-A15C-32975530F902.JPG" alt="Shot 30"><div class="caption">Silver X3</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/2552816B-A8A3-49EC-97CA-BC86FFED80B5.JPG" alt="Shot 30"><div class="caption">White Porsche</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/AF0ED99B-9B16-4BF6-B491-E470AC70CB55.JPG" alt="Shot 30"><div class="caption">Spread Wings</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/C0CBABB5-61B1-4008-A05D-B92FF68CE5AF.JPG" alt="Shot 30"><div class="caption">Spread Wings</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/C3F24282-1FF1-4D02-9F97-75CC8A221852.jpeg" alt="Shot 30"><div class="caption">Sunset Stream</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/C96B6E82-218C-4EBA-9D00-59DB06FB31B0.JPG" alt="Shot 30"><div class="caption">Amazing Avian</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/D64F81D4-AD85-436B-A9E9-E337761EF891.JPG" alt="Shot 30"><div class="caption">River of light</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/DA852811-BC23-462B-AE66-507923DC7140.JPG" alt="Shot 30"><div class="caption">Benz Taillight</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/ED34982A-D3DD-4109-9753-E8B400222DD5.JPG" alt="Shot 30"><div class="caption">Plane Trails</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/F3E1AF43-BD74-43D8-8CD0-8187CD9E89D1.JPG" alt="Shot 30"><div class="caption">Water Sunset</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/F09505A3-EC86-49F0-8FC5-545F2B0580E8.JPG" alt="Shot 30"><div class="caption">Audi Taillight</div></div>
-          <div class="gallery-item"><img src="PHOTOS MORE/FBF5C4DB-CA28-4996-AC5E-5D440FC19236.JPG" alt="Shot 30"><div class="caption">Tesla Taillight</div></div>
-         
+        <div class="gallery-item"><img src="PHOTOS MORE/4B759917-010C-461A-9398-9A565A23BA57.JPG" alt="Shot 31"><div class="caption">Water Stream</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/5A782C14-4861-4220-8B1F-AE67888600F1.JPG" alt="Shot 32"><div class="caption">Cubic Light</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/6A7949D4-5CB9-47BA-84BE-95F0EA794B5D.JPG" alt="Shot 33"><div class="caption">Slick Taillight</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/6B91567F-2044-4240-87A4-0441F529FAB8.JPG" alt="Shot 34"><div class="caption">Ominous Tesla</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/29E082B3-BD4B-4928-8F6E-6D0EE6CB4F10.JPG" alt="Shot 35"><div class="caption">Straight Taillight</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/69D8EBE0-612F-483E-9B53-9A4AA94E074E.JPG" alt="Shot 36"><div class="caption">Slick Taillight Pt.2 </div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/89FC16AD-1FFB-4256-93D1-04B8DE8AC336.JPG" alt="Shot 37"><div class="caption">Golden Sunset</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/93BA6638-1E21-4BB8-B905-4B2F1F10D7B8.JPG" alt="Shot 38"><div class="caption">A squirrel's morning</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/28997EC3-B67C-458A-A15C-32975530F902.JPG" alt="Shot 39"><div class="caption">Silver X3</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/2552816B-A8A3-49EC-97CA-BC86FFED80B5.JPG" alt="Shot 40"><div class="caption">White Porsche</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/AF0ED99B-9B16-4BF6-B491-E470AC70CB55.JPG" alt="Shot 41"><div class="caption">Spread Wings</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/C0CBABB5-61B1-4008-A05D-B92FF68CE5AF.JPG" alt="Shot 42"><div class="caption">Spread Wings</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/C3F24282-1FF1-4D02-9F97-75CC8A221852.jpeg" alt="Shot 43"><div class="caption">Sunset Stream</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/C96B6E82-218C-4EBA-9D00-59DB06FB31B0.JPG" alt="Shot 44"><div class="caption">Amazing Avian</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/D64F81D4-AD85-436B-A9E9-E337761EF891.JPG" alt="Shot 45"><div class="caption">River of light</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/DA852811-BC23-462B-AE66-507923DC7140.JPG" alt="Shot 46"><div class="caption">Benz Taillight</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/ED34982A-D3DD-4109-9753-E8B400222DD5.JPG" alt="Shot 47"><div class="caption">Plane Trails</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/F3E1AF43-BD74-43D8-8CD0-8187CD9E89D1.JPG" alt="Shot 48"><div class="caption">Water Sunset</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/F09505A3-EC86-49F0-8FC5-545F2B0580E8.JPG" alt="Shot 49"><div class="caption">Audi Taillight</div></div>
+        <div class="gallery-item"><img src="PHOTOS MORE/FBF5C4DB-CA28-4996-AC5E-5D440FC19236.JPG" alt="Shot 50"><div class="caption">Tesla Taillight</div></div>
     </div>
 
+    <script>
+        // Eye logic
+        document.addEventListener('mousemove', (e) => {
+            const eyes = document.querySelectorAll('.eye');
+            eyes.forEach(eye => {
+                const rect = eye.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+                const angleDeg = Math.atan2(e.clientY - eyeY, e.clientX - eyeX) * 180 / Math.PI;
+                const pupil = eye.querySelector('.pupil');
+                pupil.style.transform = `rotate(${angleDeg}deg) translateX(12px)`;
+            });
+        });
+
+        // Magnetic Button Logic
+        const buttons = document.querySelectorAll('.button-64');
+        buttons.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = (e.clientX - rect.left - rect.width / 2) * 0.4;
+                const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
+                btn.style.transform = `translate(${x}px, ${y}px)`;
+            });
+            btn.addEventListener('mouseleave', () => { btn.style.transform = `translate(0, 0)`; });
+        });
+
+        // Click Pulse Logic
+        window.addEventListener('click', (e) => {
+            const pulse = document.createElement('div');
+            pulse.className = 'click-pulse';
+            pulse.style.top = `${e.clientY}px`;
+            pulse.style.left = `${e.clientX}px`;
+            document.body.appendChild(pulse);
+            setTimeout(() => { pulse.remove(); }, 600);
+        });
+    </script>
 </body>
 </html>

@@ -13,11 +13,17 @@
             background-size: auto 80px;
             background-color: rgb(10, 74, 102);
             margin: 0; 
-            padding-top: 120px; 
+            padding-top: 140px; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: white;
             text-align: center;
+            overflow-x: hidden;
         }
+
+        /* --- Eye Follow Styles --- */
+        .eyes-container { display: flex; justify-content: center; gap: 20px; margin-bottom: 10px; }
+        .eye { width: 50px; height: 50px; background: white; border-radius: 50%; position: relative; display: flex; align-items: center; justify-content: center; border: 2px solid #000; }
+        .pupil { width: 20px; height: 20px; background: black; border-radius: 50%; position: absolute; }
 
         .navbar {
             background-color: rgba(0, 0, 0, 0.4);
@@ -26,7 +32,7 @@
             align-items: center;
             padding: 20px 0;
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         .button-64 {
@@ -42,7 +48,8 @@
             cursor: pointer;
             text-decoration: none;
             margin: 0 10px;
-            transition: transform 0.2s;
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
         }
 
         .button-64 span {
@@ -55,48 +62,107 @@
             display: block;
         }
 
-        .button-64:hover {
-            transform: scale(1.05);
-        }
+        h2 { margin-top: 50px; font-size: 2em; letter-spacing: 1px; }
 
-        .movie-grid {
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        .movie-card {
+        .card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
+            padding: 15px;
             border-radius: 15px;
-            transition: transform 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .movie-card:hover {
-            transform: scale(1.05);
+        .card:hover {
+            transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
-        .movie-card img {
+        .card img {
             width: 100%;
-            height: 250px; 
-            object-fit: cover; 
+            height: 280px; 
+            object-fit: cover; /* Keeps images from stretching */
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .movie-title {
+        .card-title {
             font-weight: bold;
             font-size: 1.1em;
             color: #00DDEB;
         }
+
+        .artist-subtitle {
+            font-size: 0.9em;
+            color: #AF40FF;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .song-list-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .song-list {
+            text-align: left;
+            column-count: 3;
+            column-gap: 40px;
+            list-style-position: inside;
+            padding: 0;
+        }
+
+        .song-list li {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            font-size: 0.95em;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            break-inside: avoid;
+        }
+
+        /* --- Click Pulse Styles --- */
+        .click-pulse {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: rgba(175, 64, 255, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            animation: pulse-animation 0.6s ease-out forwards;
+        }
+
+        @keyframes pulse-animation {
+            0% { width: 0; height: 0; opacity: 1; }
+            100% { width: 100px; height: 100px; opacity: 0; }
+        }
+
+        @media (max-width: 900px) { .song-list { column-count: 2; } }
+        @media (max-width: 600px) { .song-list { column-count: 1; } }
     </style>
 </head>
 <body>
+
+    <div class="eyes-container animate__animated animate__fadeIn">
+        <div class="eye"><div class="pupil"></div></div>
+        <div class="eye"><div class="pupil"></div></div>
+    </div>
 
     <h1 class="animate__animated animate__fadeInDown">Favorites & Music</h1>
 
@@ -107,46 +173,148 @@
     </nav>
 
     <h2 class="animate__animated animate__fadeIn">Movies & Shows</h2>
-
-    <div class="movie-grid animate__animated animate__fadeInUp">
-        
-        <div class="movie-card">
-            <img src="F&F.jpg" alt="Fast and Furious">
-            <div class="movie-title">Fast & Furious</div>
-        </div>
-
-        <div class="movie-card">
-            <img src="the-good-doctor.jpg" alt="The Good Doctor">
-            <div class="movie-title">The Good Doctor</div>
-        </div>
-
-        <div class="movie-card">
-            <img src="zootopia-2.jpg" alt="Zootopia">
-            <div class="movie-title">Zootopia 1 & 2</div>
-        </div>
-
-        <div class="movie-card">
-            <img src="squid-game-background-dg2felnhhngxbt6d.jpg" alt="Squid Game">
-            <div class="movie-title">Squid Games</div>
-        </div>
-
-        <div class="movie-card">
-            <img src="Manifest.webp" alt="Manifest">
-            <div class="movie-title">Manifest</div>
-        </div>
-
-        <div class="movie-card">
-            <img src="Season7poster.webp" alt="The Rookie">
-            <div class="movie-title">The Rookie</div>
-        </div>
-
+    <div class="grid-container">
+        <div class="card"><img src="F&F.jpg" alt="F&F"><div class="card-title">Fast & Furious</div></div>
+        <div class="card"><img src="the-good-doctor.jpg" alt="The Good Doctor"><div class="card-title">The Good Doctor</div></div>
+        <div class="card"><img src="zootopia-2.jpg" alt="Zootopia"><div class="card-title">Zootopia 1 & 2</div></div>
+        <div class="card"><img src="squid-game-background-dg2felnhhngxbt6d.jpg" alt="Squid Game"><div class="card-title">Squid Games</div></div>
+        <div class="card"><img src="Manifest.webp" alt="Manifest"><div class="card-title">Manifest</div></div>
+        <div class="card"><img src="Season7poster.webp" alt="The Rookie"><div class="card-title">The Rookie</div></div>
     </div>
 
-    <hr style="width: 50%; margin: 40px auto; border: 0.5px solid rgba(255,255,255,0.2);">
+    <hr style="width: 30%; margin: 60px auto; opacity: 0.2;">
 
-    <h2>Music</h2>
-    <p>Favorite artist: <strong>The Weeknd</strong></p>
-    <img src="Screenshot 2026-01-07 at 1.26.07 PM.png" alt="Dean" width="300" height="200" style="border-radius: 10px; margin-bottom: 50px;">
+    <h2>Top Albums</h2>
+    <div class="grid-container">
+        <div class="card">
+            <img src="MUSIC ALBUMS/Hurry-Up-Tomorrow-The-Weeknd-album-art-1170x780.jpeg" alt="HUT">
+            <div class="card-title">Hurry Up Tomorrow</div>
+            <div class="artist-subtitle">The Weeknd</div>
+        </div>
+        <div class="card">
+            <img src="MUSIC ALBUMS/Kiss Land .png" alt="Kiss Land">
+            <div class="card-title">Kiss Land</div>
+            <div class="artist-subtitle">The Weeknd</div>
+        </div>
+        <div class="card">
+            <img src="MUSIC ALBUMS/Starboy.jpeg" alt="Starboy">
+            <div class="card-title">Starboy</div>
+            <div class="artist-subtitle">The Weeknd</div>
+        </div>
+        <div class="card">
+            <img src="MUSIC ALBUMS/The_Weeknd_-_Beauty_Behind_the_Madness.png" alt="BBTM">
+            <div class="card-title">Beauty Behind The Madness</div>
+            <div class="artist-subtitle">The Weeknd</div>
+        </div>
+        <div class="card">
+            <img src="MUSIC ALBUMS/glass.jpg" alt="Glass">
+            <div class="card-title">Don't Tap the Glass</div>
+            <div class="artist-subtitle">Tyler the Creator</div>
+        </div>
+        <div class="card">
+            <img src="MUSIC ALBUMS/METRO BOOMIN.webp" alt="Heroes and Villians">
+            <div class="card-title">Heroes & Villains</div>
+            <div class="artist-subtitle">Metro Boomin</div>
+        </div>
+    </div>
+
+    <div class="song-list-container">
+        <h3>Top Tracks This Month</h3>
+        <ol class="song-list">
+            <li>Love Hangover - JENNIE, Dominic Fike</li>
+            <li>DtMF - Bad Bunny</li>
+            <li>House Of Balloons - The Weeknd</li>
+            <li>Show Me Love - WizTheMc</li>
+            <li>Popular - The Weeknd, Playboi Carti, Madonna</li>
+            <li>Ride It - Regard</li>
+            <li>Around Me - Metro Boomin, Don Toliver</li>
+            <li>The Morning - The Weeknd</li>
+            <li>FANTASTIC BABY - BIGBANG</li>
+            <li>Sunday Clothes - Jerry Herman</li>
+            <li>Love The Way You Lie - Eminem, Rihanna</li>
+            <li>505 - Arctic Monkeys</li>
+            <li>Just Can't Get Enough - Black Eyed Peas</li>
+            <li>Six Feet Under - The Weeknd</li>
+            <li>Alexander Hamilton - Leslie Odom Jr.</li>
+            <li>Love In The Sky - The Weeknd</li>
+            <li>Coming Down - The Weeknd</li>
+            <li>get him back! - Olivia Rodrigo</li>
+            <li>As You Are - The Weeknd</li>
+            <li>La La La - Naughty Boy, Sam Smith</li>
+            <li>K-POP - Travis Scott, Bad Bunny, The Weeknd</li>
+            <li>Professional - The Weeknd</li>
+            <li>Cry Baby - The Neighbourhood</li>
+            <li>Swim - Chase Atlantic</li>
+            <li>Take Me Back To LA - The Weeknd</li>
+            <li>I CAN'T STOP ME - TWICE</li>
+            <li>breathin - Ariana Grande</li>
+            <li>Trance - Metro Boomin, Travis Scott</li>
+            <li>Like That - Future, Metro Boomin, Kendrick Lamar</li>
+            <li>Lock On Me - Metro Boomin, Travis Scott</li>
+            <li>Timeless - The Weeknd, Playboi Carti</li>
+            <li>Teeth - 5 Seconds of Summer</li>
+            <li>Whenever, Wherever - Shakira</li>
+            <li>no tears left to cry - Ariana Grande</li>
+            <li>Feel The Fiyaaaah - Metro Boomin, A$AP Rocky</li>
+            <li>STAI - The Weeknd</li>
+            <li>STAR - The Weeknd</li>
+            <li>Cold - Maroon 5, Future</li>
+            <li>Zombie - The Neighbourhood</li>
+            <li>Nothing Without You - The Weeknd</li>
+            <li>No One Noticed - The Marías</li>
+            <li>Escapism. - RAYE, 070 Shake</li>
+            <li>THATS WHAT I WANT - Lil Nas X</li>
+            <li>Man I Need - Olivia Dean</li>
+            <li>Reminder - The Weeknd</li>
+            <li>000 - The Weeknd</li>
+            <li>Faith - The Weeknd</li>
+            <li>FaSHioN - CORTIS</li>
+            <li>Renegade - Axwell /\ Ingrosso</li>
+            <li>DEVIL IS A LIE - Tommy Richman</li>
+            <li>Superscar - ADÉLA</li>
+            <li>Moth To A Flame - Swedish House Mafia, The Weeknd</li>
+            <li>Cry For Me - The Weeknd</li>
+        </ol>
+    </div>
+
+    <script>
+        // Rotating Eye Follow Logic
+        document.addEventListener('mousemove', (e) => {
+            const eyes = document.querySelectorAll('.eye');
+            eyes.forEach(eye => {
+                const rect = eye.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2;
+                const eyeY = rect.top + rect.height / 2;
+                const angleDeg = Math.atan2(e.clientY - eyeY, e.clientX - eyeX) * 180 / Math.PI;
+                const pupil = eye.querySelector('.pupil');
+                pupil.style.transform = `rotate(${angleDeg}deg) translateX(12px)`;
+            });
+        });
+
+        // Magnetic Button Logic
+        const buttons = document.querySelectorAll('.button-64');
+        buttons.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = (e.clientX - rect.left - rect.width / 2) * 0.4;
+                const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
+                btn.style.transform = `translate(${x}px, ${y}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0, 0)`;
+            });
+        });
+
+        // Click Pulse Logic
+        window.addEventListener('click', (e) => {
+            const pulse = document.createElement('div');
+            pulse.className = 'click-pulse';
+            pulse.style.top = `${e.clientY}px`;
+            pulse.style.left = `${e.clientX}px`;
+            document.body.appendChild(pulse);
+            setTimeout(() => { pulse.remove(); }, 600);
+        });
+    </script>
 
 </body>
 </html>
