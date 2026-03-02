@@ -1,7 +1,7 @@
-/* Styles for Deans-portfolio */
+
 
 body {
-    /* Your recurring "tippy top" image */
+  
     background-image: url("Screenshot 2026-01-07 at 1.26.07 PM.png");
     background-repeat: repeat-x; 
     background-position: top;
@@ -15,7 +15,7 @@ body {
     text-align: center;
 }
 
-/* The Bar Container */
+
 .navbar {
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
@@ -26,7 +26,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Button 64 Core Styles */
+
 .button-64 {
     align-items: center;
     background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
@@ -46,7 +46,7 @@ body {
     cursor: pointer;
     margin: 0 10px;
     
-    /* MAGNETIC ADDITIONS */
+   
     transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     z-index: 10;
@@ -63,12 +63,12 @@ body {
     display: block;
 }
 
-/* CLICK PULSE EFFECT */
+
 .click-pulse {
     position: fixed;
     width: 20px;
     height: 20px;
-    background: rgba(0, 221, 235, 0.6); /* Cyan glow */
+    background: rgba(0, 221, 235, 0.6); 
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
@@ -87,16 +87,16 @@ body {
         height: 100px;
         opacity: 0;
     }
-}/* This makes sure carousel images look perfect */
+}
 .carousel-slide img {
     width: 100%;
-    height: 550px; /* Fixed height keeps the page steady */
-    object-fit: cover; /* Crops the edges instead of stretching the image */
-    object-position: center; /* Keeps the focus on the middle of the photo */
+    height: 550px; 
+    object-fit: cover; 
+    object-position: center; 
     display: block;
 }
 
-/* This makes sure your album/movie grid images look perfect */
+
 .card img {
     width: 100%;
     height: 250px; 
